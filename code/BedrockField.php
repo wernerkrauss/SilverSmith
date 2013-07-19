@@ -68,7 +68,12 @@ class BedrockField extends SilverSmithNode {
      * @return string
      */
     public function getEntity() {
-        return SilverSmithUtil::generate_unique_i18n_entity($this->getLabel(), $this->getNamespace());
+        $type = $this->getConfigVar('HasOne') 
+                ? 'has_one_' 
+                : 'db_';
+        
+        return $type.$this->getName();
+//        return SilverSmithUtil::generate_unique_i18n_entity($this->getLabel(), $this->getNamespace());
     }
     
     
