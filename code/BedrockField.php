@@ -337,7 +337,7 @@ class BedrockField extends SilverSmithNode {
      */
     public function getEnumField() {
         if($this->get('Map')) {
-            return 'Enum("'.implode(',',$this->get('Map')->toArray()).'")';            
+            return 'Enum("'.implode(',',$this->get('Map')->toArray()).'","")';            
         }
         return 'Enum("")';
     }
